@@ -1,0 +1,42 @@
+.nbcont{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background: rgb(26,36,48);
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 99;
+}
+
+.nbcont_itm{
+  display: flex;
+  color: white;
+  padding: 30px;
+  font-size: 17px;
+  font-family: "po";
+  font-weight: 100;
+}
+
+.sep{
+  height: 3px;
+  width: 100%;
+  background-color: #03C2C9;
+}
+
+@media screen and (min-heigh: 600px) {
+    .nbcont{
+      position: fixed !important;
+    }
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: #d51c6c;
+  transition: all 450ms;
+  cursor: pointer;
+}
