@@ -1,4 +1,20 @@
+<div class="modalmenu" #modal>
+  <span class="material-symbols-outlined nbcont_x" (click)="cerrar(modal)">close</span>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout)" (mouseleave)="sepout(sepinout)"><a href="#in">HOME</a></div>
+  <div class="sep" #sepinout></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout1)" (mouseleave)="sepout(sepinout1)"><a href="#ab">SOBRE MI</a></div>
+  <div class="sep" #sepinout1></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout2)" (mouseleave)="sepout(sepinout2)"><a href="#his">HISTORIA</a></div>
+  <div class="sep" #sepinout2></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout3)" (mouseleave)="sepout(sepinout3)"><a href="#ex">EXPERIENCIA</a></div>
+  <div class="sep" #sepinout3></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout4)" (mouseleave)="sepout(sepinout4)"><a href="#cont">CONTACTO</a></div>
+  <div class="sep" #sepinout4></div>
+</div>
+
 <div class="nbcont">
+  <span class="material-symbols-outlined" id="menu" (click)="abrir(modal)">menu</span>
+  <img src="../../assets/Photo/1.png" alt="Logo" width="55px" height="55px">
   <div class="nbcont_itm"><a href="#in">HOME</a></div>
   <div class="nbcont_itm"><a href="#ab">SOBRE MI</a></div>
   <div class="nbcont_itm"><a href="#his">HISTORIA</a></div>

@@ -613,6 +613,11 @@ a, a:link, a:visited {
   left: 440px;
 }
 
+.modal__cointainer_x:hover{
+  color: rgb(255, 51, 0);
+  transition: color 300ms;
+}
+
 .modal__cointainer_close{
   opacity: 1 !important;
   pointer-events: unset !important;
