@@ -15,7 +15,6 @@
   padding: 0 30px 0 30px;
   font-size: 17px;
   font-family: "po";
-  font-weight: 100;
   position: relative;
   right: 30px;
 }
@@ -35,11 +34,12 @@
 a{
   text-decoration: none;
   color: white;
-  transition: all 650ms;
+  transition: color 650ms;
 }
 
 a:hover{
-  color: #d51c6c;
+  color: #d51c6c !important;
+  font-weight: 600;
   transition: color 650ms;
   cursor: pointer;
 }
@@ -102,7 +102,6 @@ img{
 
 .modal_itm a{
   font-size: 20px;
-  font-weight: 400;
 }
 
 .modal_itm a:hover{

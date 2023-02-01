@@ -132,4 +132,34 @@ window.addEventListener("scroll", () =>{
     document.getElementsByClassName("nbcont")[0].style = "position: ; background: rgb(26,36,48);"
   }
 
+
+  if (window.pageYOffset < 300) {
+    document.getElementById("inn").style = "color: #d51c6c;"
+  } else {
+    document.getElementById("inn").style = "color: white;"
+  }
+
+  if (window.pageYOffset < 1900 && window.pageYOffset > 299) {
+    document.getElementById("abb").style = "color: #d51c6c; font-weight: 600 !important;"
+  } else {
+    document.getElementById("abb").style = "color: white;"
+  }
+
+  if (window.pageYOffset > 1900 && window.pageYOffset < 2700) {
+    document.getElementById("hiss").style = "color: #d51c6c; font-weight: 600 !important;"
+  } else {
+    document.getElementById("hiss").style = "color: white;"
+  }
+
+  if (window.pageYOffset > 2700 && window.pageYOffset < 3368) {
+    document.getElementById("exx").style = "color: #d51c6c; font-weight: 600 !important;"
+  } else {
+    document.getElementById("exx").style = "color: white;"
+  }
+
+  if (window.pageYOffset > 3368) {
+    document.getElementById("contt").style = "color: #d51c6c; font-weight: 600 !important;"
+  } else {
+    document.getElementById("contt").style = "color: white;"
+  }
 })

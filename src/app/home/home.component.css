@@ -85,6 +85,85 @@ body {
   align-items: flex-start;
 }
 
+/* Responsive */
+@media screen and (max-width: 1150px){
+
+  .me{
+    margin-left: 0px !important;
+  }
+
+  .about{
+    flex-wrap: wrap !important;
+  }
+
+  .about2{
+    flex-wrap: wrap !important;
+    justify-content: center;
+    margin-top: 900px;
+    flex-direction: column;
+  }
+
+  .specs{
+    width: 0;
+    margin-right: 0;
+    margin-top: 20vh;
+    width: 100% !important;
+    align-items: center;
+  }
+
+  #bar{
+    margin: 5px 0 30px 105px !important;
+    height: 1px !important;
+  }
+}
+
+/* Phone */
+
+@media screen and (max-width: 480px){
+  #qst{
+    width: 360px !important;
+  }
+
+  .ht{
+    width: 350px !important;
+  }
+
+  .nm{
+    font-size: 12.5px !important;
+    padding: 0 5px 0 5px !important;
+  }
+
+  .specs{
+    margin-top: 80px;
+    margin-right: 0px !important;
+  }
+
+  .contc{
+    width: 15px !important;
+  }
+
+  .activado{
+    width: 150px !important;
+  }
+
+  .cartelact{
+    width: 830% !important;
+    font-size: 15px !important;
+  }
+
+  .carteles{
+    width: 125px !important;
+  }
+
+  .adms{
+    font-size: 15px !important;
+  }
+
+  .icocont{
+    margin: 100px 60px 100px 60px !important;
+  }
+}
+
 .caract {
   display: flex;
   flex-direction: column;
@@ -437,7 +516,7 @@ a, a:link, a:visited {
   border: 1px solid #000000 ;
   position: relative;
   bottom: 315px;
-  left: 180px;
+  left: 139px;
   z-index: 3;
   padding: 10px;
   color: rgb(48, 48, 48);
@@ -447,8 +526,8 @@ a, a:link, a:visited {
 }
 .triang{
   position: relative;
-  bottom: 75px;
-  right: 181px;
+  bottom: 93px;
+  right: 31px;
   rotate: -90deg;
   padding: 0px;
 }
@@ -650,7 +729,7 @@ a, a:link, a:visited {
 
 #cont{
   width: 100%;
-  min-height: 50%;
+  min-height: 75%;
   height: auto;
   background-color: #252934;
   flex-direction: column;
