@@ -162,7 +162,26 @@ body {
   .icocont{
     margin: 100px 60px 100px 60px !important;
   }
+
+  .triang{
+    bottom: 110px !important;
+    right: 80px !important;
+  }
+
+  .admscarton{
+    bottom: 450px !important;
+    left: 114px !important;
+    width: 145px !important;
+  }
+
 }
+
+@media screen and (max-width: 1257px) {
+  .caract{
+    padding: 0px 0px 0px 0px !important;
+  }
+}
+
 
 .caract {
   display: flex;
@@ -687,9 +706,9 @@ a, a:link, a:visited {
 .modal__cointainer_x{
   cursor: pointer;
   color: white;
-  position: relative;
-  bottom: 475px;
-  left: 440px;
+  position: absolute;
+  bottom: 90%;
+  left: 87%;
 }
 
 .modal__cointainer_x:hover{

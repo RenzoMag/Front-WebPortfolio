@@ -132,34 +132,87 @@ window.addEventListener("scroll", () =>{
     document.getElementsByClassName("nbcont")[0].style = "position: ; background: rgb(26,36,48);"
   }
 
+/* Englobar todo en un mismo if para detectar si es mayor o menor a la resolución */
 
-  if (window.pageYOffset < 300) {
-    document.getElementById("inn").style = "color: #d51c6c;"
-  } else {
-    document.getElementById("inn").style = "color: white;"
+if (window.innerWidth >= 1151) {
+    if (window.pageYOffset < 300) {
+      document.getElementById("inn").style = "color: #d51c6c;"
+    } else {
+      document.getElementById("inn").style = "color: white;"
+    }
   }
 
-  if (window.pageYOffset < 1900 && window.pageYOffset > 299) {
-    document.getElementById("abb").style = "color: #d51c6c; font-weight: 600 !important;"
-  } else {
-    document.getElementById("abb").style = "color: white;"
-  }
+if (window.innerWidth >= 1151) {
+    if (window.pageYOffset < 1900 && window.pageYOffset > 299) {
+      document.getElementById("abb").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("abb").style = "color: white;"
+    }
+}
 
-  if (window.pageYOffset > 1900 && window.pageYOffset < 2700) {
-    document.getElementById("hiss").style = "color: #d51c6c; font-weight: 600 !important;"
-  } else {
-    document.getElementById("hiss").style = "color: white;"
-  }
+if (window.innerWidth >= 1151) {
+    if (window.pageYOffset > 1898 && window.pageYOffset < 2700) {
+      document.getElementById("hiss").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("hiss").style = "color: white;"
+    }
+}
 
-  if (window.pageYOffset > 2700 && window.pageYOffset < 3368) {
-    document.getElementById("exx").style = "color: #d51c6c; font-weight: 600 !important;"
-  } else {
-    document.getElementById("exx").style = "color: white;"
-  }
+if (window.innerWidth >= 1151) {
+    if (window.pageYOffset > 2698 && window.pageYOffset < 3368) {
+      document.getElementById("exx").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("exx").style = "color: white;"
+    }
+}
 
-  if (window.pageYOffset > 3368) {
-    document.getElementById("contt").style = "color: #d51c6c; font-weight: 600 !important;"
-  } else {
-    document.getElementById("contt").style = "color: white;"
-  }
+if (window.innerWidth >= 1151) {
+    if (window.pageYOffset > 3368) {
+      document.getElementById("contt").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("contt").style = "color: white;"
+    }
+}
+
+  /* Colores navbar despues de resizing */
+
+if (window.innerWidth <= 1150) {
+    if (window.pageYOffset < 146) {
+      document.getElementById("inn").style = "color: #d51c6c;"
+    } else {
+      document.getElementById("inn").style = "color: white;"
+    }
+}
+
+if (window.innerWidth <= 1150) {
+    if (window.pageYOffset < 3480 && window.pageYOffset > 144) {
+      document.getElementById("abb").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("abb").style = "color: white;"
+    }
+}
+
+if (window.innerWidth <= 1150) {
+    if (window.pageYOffset > 3478 && window.pageYOffset < 4280) {
+      document.getElementById("hiss").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("hiss").style = "color: white;"
+    }
+}
+
+if (window.innerWidth <= 1150) {
+    if (window.pageYOffset > 4278 && window.pageYOffset < 5198) {
+      document.getElementById("exx").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("exx").style = "color: white;"
+    }
+}
+
+if (window.innerWidth <= 1150) {
+    if (window.pageYOffset > 5200) {
+      document.getElementById("contt").style = "color: #d51c6c; font-weight: 600 !important;"
+    } else {
+      document.getElementById("contt").style = "color: white;"
+    }
+}
 })
