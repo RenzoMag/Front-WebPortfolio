@@ -32,6 +32,17 @@ body {
   scroll-behavior: smooth;
 }
 
+.reveal{
+  position: relative;
+  transform: translateX(-180px);
+  opacity: 0;
+  transition: 1.5s all ease;
+}
+.reveal.active{
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .inicio {
   display: flex;
   flex-direction: column;

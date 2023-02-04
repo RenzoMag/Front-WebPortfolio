@@ -125,7 +125,22 @@ function alertaokgi() {
     }
 }
 
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 300;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
 window.addEventListener("scroll", () =>{
+
+  reveal();
+
   if (window.pageYOffset > 756) {
     document.getElementsByClassName("nbcont")[0].style = "position: fixed; background: linear-gradient(180deg, rgba(26,36,48,1) 89%, rgba(255,255,255,0.3) 100%);"
   } else{

@@ -1,14 +1,14 @@
 <div class="modalmenu" #modal>
   <span class="material-symbols-outlined nbcont_x" (click)="cerrar(modal)">close</span>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout)" (mouseleave)="sepout(sepinout)"><a href="#in">HOME</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout)" (mouseleave)="sepout(sepinout)"><a (click)="cerrar(modal)" href="#in">HOME</a></div>
   <div class="sep" #sepinout></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout1)" (mouseleave)="sepout(sepinout1)"><a href="#ab">SOBRE MI</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout1)" (mouseleave)="sepout(sepinout1)"><a (click)="cerrar(modal)" href="#ab">SOBRE MI</a></div>
   <div class="sep" #sepinout1></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout2)" (mouseleave)="sepout(sepinout2)"><a href="#his">HISTORIA</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout2)" (mouseleave)="sepout(sepinout2)"><a (click)="cerrar(modal)" href="#his">HISTORIA</a></div>
   <div class="sep" #sepinout2></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout3)" (mouseleave)="sepout(sepinout3)"><a href="#ex">EXPERIENCIA</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout3)" (mouseleave)="sepout(sepinout3)"><a (click)="cerrar(modal)" href="#ex">EXPERIENCIA</a></div>
   <div class="sep" #sepinout3></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout4)" (mouseleave)="sepout(sepinout4)"><a href="#cont">CONTACTO</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout4)" (mouseleave)="sepout(sepinout4)"><a (click)="cerrar(modal)" href="#cont">CONTACTO</a></div>
   <div class="sep" #sepinout4></div>
 </div>
 
