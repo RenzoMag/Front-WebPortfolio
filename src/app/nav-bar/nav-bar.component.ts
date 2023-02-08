@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AppWebComponent } from '../app-web/app-web.component';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
+
 export class NavBarComponent {
   sepin(sepinout: HTMLElement){
     sepinout.style.translate = "0px"

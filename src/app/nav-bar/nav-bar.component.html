@@ -1,24 +1,24 @@
 <div class="modalmenu" #modal>
   <span class="material-symbols-outlined nbcont_x" (click)="cerrar(modal)">close</span>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout)" (mouseleave)="sepout(sepinout)"><a (click)="cerrar(modal)" href="#in">HOME</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout)" (mouseleave)="sepout(sepinout)"><a (click)="cerrar(modal)" [routerLink]="'/home'" fragment="in">HOME</a></div>
   <div class="sep" #sepinout></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout1)" (mouseleave)="sepout(sepinout1)"><a (click)="cerrar(modal)" href="#ab">SOBRE MI</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout1)" (mouseleave)="sepout(sepinout1)"><a (click)="cerrar(modal)" [routerLink]="'/home'" fragment="ab">SOBRE MI</a></div>
   <div class="sep" #sepinout1></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout2)" (mouseleave)="sepout(sepinout2)"><a (click)="cerrar(modal)" href="#his">HISTORIA</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout2)" (mouseleave)="sepout(sepinout2)"><a (click)="cerrar(modal)" [routerLink]="'/home'" fragment="his">HISTORIA</a></div>
   <div class="sep" #sepinout2></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout3)" (mouseleave)="sepout(sepinout3)"><a (click)="cerrar(modal)" href="#ex">EXPERIENCIA</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout3)" (mouseleave)="sepout(sepinout3)"><a (click)="cerrar(modal)" [routerLink]="'/home'" fragment="ex">EXPERIENCIA</a></div>
   <div class="sep" #sepinout3></div>
-  <div class="modal_itm" (mouseenter)="sepin(sepinout4)" (mouseleave)="sepout(sepinout4)"><a (click)="cerrar(modal)" href="#cont">CONTACTO</a></div>
+  <div class="modal_itm" (mouseenter)="sepin(sepinout4)" (mouseleave)="sepout(sepinout4)"><a (click)="cerrar(modal)" [routerLink]="'/home'" fragment="cont">CONTACTO</a></div>
   <div class="sep" #sepinout4></div>
 </div>
 
 <div class="nbcont">
   <span class="material-symbols-outlined" id="menu" (click)="abrir(modal)">menu</span>
   <img src="../../assets/Photo/1.png" title=":D" alt="Logo" width="55px" height="55px">
-  <div class="nbcont_itm"><a id="inn" href="#in">HOME</a></div>
-  <div class="nbcont_itm"><a id="abb" href="#ab">SOBRE MI</a></div>
-  <div class="nbcont_itm"><a id="hiss" href="#his">HISTORIA</a></div>
-  <div class="nbcont_itm"><a id="exx" href="#ex">EXPERIENCIA</a></div>
-  <div class="nbcont_itm"><a id="contt" href="#cont">CONTACTO</a></div>
+  <div class="nbcont_itm"><a id="inn" [routerLink]="'/home'" fragment="in">HOME</a></div>
+  <div class="nbcont_itm"><a id="abb" [routerLink]="'/home'" fragment="ab">SOBRE MI</a></div>
+  <div class="nbcont_itm"><a id="hiss" [routerLink]="'/home'" fragment="his">HISTORIA</a></div>
+  <div class="nbcont_itm"><a id="exx" [routerLink]="'/home'" fragment="ex">EXPERIENCIA</a></div>
+  <div class="nbcont_itm"><a id="contt" [routerLink]="'/home'" fragment="cont">CONTACTO</a></div>
 </div>
 <div class="sep"></div>

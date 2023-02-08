@@ -1,15 +1,10 @@
 import {  Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './home.component.html'
 })
 export class HomeComponent{
-  myScriptElement: HTMLScriptElement;
-  constructor(){
-    this.myScriptElement = document.createElement("script");
-    this.myScriptElement.src = "./assets/JS/main.js";
-    document.body.appendChild(this.myScriptElement);
-  }
+
 }
