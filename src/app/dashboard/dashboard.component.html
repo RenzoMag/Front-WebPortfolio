@@ -1,0 +1,12 @@
+<div class="home">
+  <div class="msg">
+  <div id="title">Bienvenido a mi PortFolio <span style="color: #E31B6D;">{{ dataUser?.email }}</span>!</div>
+  <div id="text">Esta es una sección hecha específicamente para mostrar el funcionamiento del Log In. <br> Solo usuarios registrados y logueados pueden acceder a este apartado. <br>
+  <span *ngIf="IsAdmin"> <br> Como usted es un usuario registrado como admin, tiene la posibilidad, además, de poder entrar al Panel de Administrador.</span></div>
+  <button *ngIf="!IsAdmin" class="btn btn-outline-light" type="button" routerLink="/home">Volver al portfolio</button>
+  <span *ngIf="IsAdmin">
+    <button style="transform: scale(1.15); margin-bottom: 10px;" type="button" class="btn btn-outline-danger" routerLink="/CrudEdit">Admin Panel</button> <br>
+    <button style="transform: scale(0.7);" class="btn btn-outline-light" type="button" routerLink="/home">Volver al portfolio</button>
+  </span>
+  </div>
+</div>

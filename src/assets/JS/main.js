@@ -143,8 +143,10 @@ window.addEventListener("scroll", () =>{
 
   if (window.pageYOffset > 756) {
     document.getElementsByClassName("nbcont")[0].style = "position: fixed; background: linear-gradient(180deg, rgba(26,36,48,1) 89%, rgba(255,255,255,0.3) 100%);"
+    document.getElementById("pipp").style = "position: relative; bottom: 3px;"
   } else{
     document.getElementsByClassName("nbcont")[0].style = "position: ; background: rgb(26,36,48);"
+    document.getElementById("pipp").style = "position: relative; bottom: 0px;"
   }
 
 /* Englobar todo en un mismo if para detectar si es mayor o menor a la resolución */

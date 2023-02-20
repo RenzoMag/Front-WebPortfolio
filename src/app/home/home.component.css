@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "rl";
+  src: url("../../assets/Fonts/Raleway-Light.ttf");
+}
+
+.okalert{
+  position: fixed;
+  display: flex !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: auto !important;
+  height: auto !important;
+}
+
+#alert{
+  background-color: #4eca7d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 250px;
+  border-radius: 9px;
+  color: white;
+  font-size: 17px;
+  z-index: 20;
+  font-family: "rl";
+  font-weight: 800;
+  margin: 0 50px 30px 0;
+  position: relative;
+  left: 300px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  width: auto !important;
+  height: auto !important;
+  padding: 10px 20px 10px 20px;
+}

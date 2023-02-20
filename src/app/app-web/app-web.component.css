@@ -13,6 +13,8 @@
   src: url("../../assets/Fonts/Poppins-Light.ttf");
 }
 
+
+
 * {
   font-family: "rl";
   box-sizing: border-box;
@@ -308,7 +310,7 @@ body {
 
 .nm{
   display: flex;
-  flex-basis: 100px;
+  flex-basis: 140px;
   color: white;
   background-color: #03C2C9;
   height: 28px;
@@ -372,7 +374,7 @@ body {
 
 @keyframes js{
   0%{width: 0;}
-  100%{width: 35%;}
+  100%{width: 45%;}
 }
 
 @keyframes py{
@@ -382,22 +384,22 @@ body {
 
 @keyframes rb{
   0%{width: 0;}
-  100%{width: 30%;}
+  100%{width: 40%;}
 }
 
 @keyframes an{
   0%{width: 0;}
-  100%{width: 35%;}
+  100%{width: 50%;}
 }
 
 @keyframes ns{
   0%{width: 0;}
-  100%{width: 35%;}
+  100%{width: 25%;}
 }
 
 @keyframes c{
   0%{width: 0;}
-  100%{width: 35%;}
+  100%{width: 25%;}
 }
 
 #tit{
@@ -854,4 +856,5 @@ a, a:link, a:visited {
   margin: 0 50px 30px 0;
   position: relative;
   left: 300px;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0);
 }

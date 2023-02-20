@@ -6,20 +6,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 
-<body style="background: #214a80;">
-    <div class="login-dark" style="height: 695px;">
-        <form class="conte">
+<body style="background: #214a80;" id="bodymio">
+    <div class="login-dark" style="height: 695px;" *ngIf="!loading">
+        <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario" class="conte">
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-            <div class="form-group"><input class="form-control" type="name" name="name" placeholder="Nombre"></div>
-            <div class="form-group"><input class="form-control" type="lname" name="lname" placeholder="Apellido"></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Correo"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block">Registrarse</button></div>
+            <div class="form-group"><input class="form-control" type="name" name="name" placeholder="Nombre" formControlName="Nombre"></div>
+            <div class="form-group"><input class="form-control" type="lname" name="lname" placeholder="Apellido" formControlName="Apellido"></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Correo" formControlName="Email"></div>
+            <span *ngIf="registrarUsuario.get('Email')?.hasError('required') && registrarUsuario.get('Email')?.touched" class="text-danger errorLabel">
+              El <strong>Correo</strong> es requerido.
+            </span>
+            <span *ngIf="registrarUsuario.get('Email')?.hasError('email') && registrarUsuario.get('Email')?.touched" class="text-danger errorLabel">
+              El <strong>Correo</strong> es invalido.
+            </span>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName= "Password"></div>
+            <span *ngIf="registrarUsuario.get('Password')?.hasError('required') && registrarUsuario.get('Password')?.touched" class="text-danger errorLabel">
+              La <strong>Contraseña</strong> es requerida.
+            </span>
+            <span *ngIf="registrarUsuario.get('Password')?.hasError('minlength') && registrarUsuario.get('Password')?.touched" class="text-danger errorLabel">
+              La <strong>Contraseña</strong> debe tener 6 caracteres.
+            </span>
+            <div class="form-group"><input class="form-control" type="password" name="passwordrepeat" placeholder="Repetir Contraseña" formControlName="RepetirPassword"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" [disabled]="registrarUsuario.invalid">Registrarse</button></div>
             <div class="bar" #bar></div>
-            <div class="forgotc" #forgc><a class="forgot" href="/login" (mouseleave)="barout(bar, bar2, forgc)" (mouseenter)="barenter(bar, bar2, forgc)">Log In</a></div>
+            <div class="forgotc" #forgc><a class="forgot" routerLink="/login" (mouseleave)="barout(bar, bar2, forgc)" (mouseenter)="barenter(bar, bar2, forgc)">Log In</a></div>
             <div class="bar2" #bar2></div>
         </form>
     </div>
+    <app-spinner *ngIf="loading"></app-spinner>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>

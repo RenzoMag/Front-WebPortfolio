@@ -8,6 +8,13 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { AppWebComponent } from './app-web/app-web.component';
 import { RegisterComponent } from './register/register.component';
+import { CrudEditComponent } from './crud-edit/crud-edit.component';
+import { AngularFireModule } from "@angular/fire/compat"
+import { environments } from 'src/environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +22,19 @@ import { RegisterComponent } from './register/register.component';
     NavBarComponent,
     LoginComponent,
     AppWebComponent,
-    RegisterComponent
+    RegisterComponent,
+    CrudEditComponent,
+    SpinnerComponent,
+    DashboardComponent,
+    VerificarCorreoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    AngularFireModule.initializeApp(environments.firebaseConfig),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [HomeComponent]

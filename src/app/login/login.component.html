@@ -7,17 +7,27 @@
 </head>
 
 <body style="background: #214a80;">
-    <div class="login-dark" style="height: 695px;">
-        <form class="conte">
+    <div class="login-dark" style="height: 695px;" *ngIf="!loading">
+        <form (ngSubmit)="login()" class="conte"[formGroup]="loginUsuario">
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Correo"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block">Ingresar</button></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Correo" formControlName="Email"></div>
+            <span *ngIf="loginUsuario.get('Email')?.hasError('required') && loginUsuario.get('Email')?.touched" class="text-danger errorLabel">
+              El <strong>Correo</strong> es requerido.
+            </span>
+            <span *ngIf="loginUsuario.get('Email')?.hasError('email') && loginUsuario.get('Email')?.touched" class="text-danger errorLabel">
+              El <strong>Correo</strong> es invalido.
+            </span>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="Password"></div>
+            <span *ngIf="loginUsuario.get('Password')?.hasError('required') && loginUsuario.get('Password')?.touched" class="text-danger errorLabel">
+              La <strong>Contraseña</strong> es requerida.
+            </span>
+            <div class="form-group"><button type="submit" class="btn btn-primary btn-block" [disabled]="loginUsuario.invalid">Ingresar</button></div>
             <div class="bar" #bar></div>
-            <div class="forgotc" #forgc><a class="forgot" href="/register" (mouseleave)="barout(bar, bar2, forgc)" (mouseenter)="barenter(bar, bar2, forgc)">Registrarse</a></div>
+            <div class="forgotc" #forgc><a class="forgot" routerLink="/register" (mouseleave)="barout(bar, bar2, forgc)" (mouseenter)="barenter(bar, bar2, forgc)">Registrarse</a></div>
             <div class="bar2" #bar2></div>
         </form>
     </div>
+    <app-spinner *ngIf="loading"></app-spinner>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>

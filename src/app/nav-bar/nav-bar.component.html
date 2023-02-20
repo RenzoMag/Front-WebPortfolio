@@ -15,10 +15,14 @@
 <div class="nbcont">
   <span class="material-symbols-outlined" id="menu" (click)="abrir(modal)">menu</span>
   <img src="../../assets/Photo/1.png" title=":D" alt="Logo" width="55px" height="55px">
+  <div style="display: flex; flex-direction: row;">
   <div class="nbcont_itm"><a id="inn" [routerLink]="'/home'" fragment="in">HOME</a></div>
   <div class="nbcont_itm"><a id="abb" [routerLink]="'/home'" fragment="ab">SOBRE MI</a></div>
   <div class="nbcont_itm"><a id="hiss" [routerLink]="'/home'" fragment="his">HISTORIA</a></div>
   <div class="nbcont_itm"><a id="exx" [routerLink]="'/home'" fragment="ex">EXPERIENCIA</a></div>
-  <div class="nbcont_itm"><a id="contt" [routerLink]="'/home'" fragment="cont">CONTACTO</a></div>
+  <div class="nbcont_itm" style="padding-right: 0px;"><a id="contt" [routerLink]="'/home'" fragment="cont">CONTACTO</a></div>
+  </div>
+  <button type="button" id="pipp" class="btn btn-sm btn-outline-primary" routerLink="/login" *ngIf="!IsLogIn">Log In</button>
+  <button type="button" id="pipp" class="btn btn-sm btn-outline-primary" (click)="logout()" *ngIf="IsLogIn">Log Out</button>
 </div>
 <div class="sep"></div>

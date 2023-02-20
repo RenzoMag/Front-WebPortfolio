@@ -1,4 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: "rl";
+  src: url("assets/Fonts/Raleway-Light.ttf");
+}
+
+@font-face {
+  font-family: "rb";
+  src: url("assets/Fonts/Raleway-Bold.ttf");
+}
+
+@font-face {
+  font-family: "po";
+  src: url("assets/Fonts/Poppins-Light.ttf");
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #252934 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #252934;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+
+  .form-floating{
+    text-align: start;
+  }
+
+  .errorLabel{
+    position: relative;
+    bottom: 12px;
+    margin-left: 10px;
+    font-size: 12px;
+  }
