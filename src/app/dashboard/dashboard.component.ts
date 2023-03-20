@@ -30,4 +30,9 @@ export class DashboardComponent implements OnInit{
       }
     });
   }
+
+  redt(){
+    location.href = "/home"
+  }
+
 }

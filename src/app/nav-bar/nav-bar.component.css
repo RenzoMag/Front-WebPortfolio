@@ -87,7 +87,7 @@ a:hover{
   }
 
   img{
-    margin-left: calc(25% - 55px/2);
+    margin-left: calc(25% - 75px/2);
   }
 
   #menu{
@@ -96,7 +96,7 @@ a:hover{
   }
 
   .btn{
-    margin-right: 20px !important;
+    margin-right: 15px !important;
     right: 0px !important;
   }
 }

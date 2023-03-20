@@ -8,13 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { AppWebComponent } from './app-web/app-web.component';
 import { RegisterComponent } from './register/register.component';
-import { CrudEditComponent } from './crud-edit/crud-edit.component';
-import { AngularFireModule } from "@angular/fire/compat"
+import { AngularFireModule } from '@angular/fire/compat';
 import { environments } from 'src/environments/environment';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EditIconComponent } from './shared/edit-icon/edit-icon.component';
+import { EditIconInputComponent } from './shared/edit-icon-input/edit-icon-input.component';
+import { IconsEditCancelComponent } from './shared/icons-edit-cancel/icons-edit-cancel.component';
+import { IconsEditDoneComponent } from './shared/icons-edit-done/icons-edit-done.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +27,13 @@ import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.co
     LoginComponent,
     AppWebComponent,
     RegisterComponent,
-    CrudEditComponent,
     SpinnerComponent,
     DashboardComponent,
-    VerificarCorreoComponent
+    VerificarCorreoComponent,
+    EditIconComponent,
+    EditIconInputComponent,
+    IconsEditCancelComponent,
+    IconsEditDoneComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +41,11 @@ import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.co
     BrowserAnimationsModule,
     RouterModule,
     AngularFireModule.initializeApp(environments.firebaseConfig),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [HomeComponent],
 })
-export class AppModule { }
+export class AppModule {}

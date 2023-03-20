@@ -39,7 +39,7 @@ export class NavBarComponent {
 
 
   logout(){
-    this.afAuth.signOut().then(() => this.router.navigate(["/home"]));
+    this.afAuth.signOut().then(() => location.href = "/home");
   }
 
   IsLogIn: boolean = false
