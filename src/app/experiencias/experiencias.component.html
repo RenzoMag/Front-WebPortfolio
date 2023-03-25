@@ -1,0 +1,56 @@
+<div id="ex">
+  <div class="titulos reveal">
+    Experiencias <br />
+    <div class="barra"></div>
+  </div>
+
+  <div class="contwork">
+    <div *ngFor="let exp of experiencias">
+      <div
+        class="work"
+        style="background-image: url({{ exp.url }})"
+        *ngIf="exp.view"
+      >
+        <app-delete-icon
+          class="icd"
+          (click)="removeCard(exp.id)"
+        ></app-delete-icon>
+        <app-edit-icon class="ic" (click)="editCard(exp.id)"></app-edit-icon>
+        <div class="workhov">
+          <button (click)="btnopen(exp.id)" class="workbtn">Conoce más</button>
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="IsAdmin"
+      class="work"
+      style="
+        background: rgba(190, 190, 190, 0.25);
+        box-shadow: 5px 5px 40px rgb(21, 115, 71);
+      "
+    >
+      <app-add-icon (click)="addCard()"></app-add-icon>
+    </div>
+  </div>
+
+  <section class="modal" #a>
+    <div class="modal__cointainer" #b>
+      <img [src]="modalact.url" alt="ejemplo" />
+      <div>
+        <h2>
+          <a href="{{ modalact.weburl }}" target="_blank" rel="noopener">{{
+            modalact.title
+          }}</a>
+        </h2>
+        <p>
+          {{ modalact.description }}
+        </p>
+        <span
+          (click)="btnclose()"
+          class="material-symbols-outlined modal__cointainer_x"
+          >close</span
+        >
+      </div>
+    </div>
+  </section>
+</div>

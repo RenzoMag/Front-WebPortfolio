@@ -11,8 +11,8 @@ import { RestApi } from 'src/services/http.service';
 export class AppWebComponent implements OnInit {
   IsEditing = false;
   IsEditingBars = [false, false, false, false, false, false, false, false];
-  inputLeng: Array<string> = [];
-  inputPorc: Array<number> = [];
+  inputLeng: Array<string> = [''];
+  inputPorc: Array<number> = [0];
   myScriptElement: HTMLScriptElement;
   desPerfil: any;
 
@@ -27,24 +27,14 @@ export class AppWebComponent implements OnInit {
       this.IsEditing = item;
     });
 
-    this.RestApi.getTask().subscribe((data) => {
+    this.RestApi.getTask().subscribe((data: any) => {
+      data.forEach((element) => {
+        this.inputPorc.push(element.description);
+      });
+      data.forEach((element) => {
+        this.inputLeng.push(element.title);
+      });
       this.desPerfil = data[9].description;
-      this.inputLeng[1] = data[0].title;
-      this.inputPorc[1] = data[0].description;
-      this.inputLeng[2] = data[1].title;
-      this.inputPorc[2] = data[1].description;
-      this.inputLeng[3] = data[2].title;
-      this.inputPorc[3] = data[2].description;
-      this.inputLeng[4] = data[3].title;
-      this.inputPorc[4] = data[3].description;
-      this.inputLeng[5] = data[4].title;
-      this.inputPorc[5] = data[4].description;
-      this.inputLeng[6] = data[5].title;
-      this.inputPorc[6] = data[5].description;
-      this.inputLeng[7] = data[6].title;
-      this.inputPorc[7] = data[6].description;
-      this.inputLeng[8] = data[7].title;
-      this.inputPorc[8] = data[7].description;
     });
   }
 
@@ -58,7 +48,8 @@ export class AppWebComponent implements OnInit {
 
   btneditclose(num: number) {
     this.IsEditingBars[num] = false;
-    location.href = '/home';
+    location.href = '/home#ab';
+    location.reload();
   }
 
   btnsend(num: number) {
@@ -71,7 +62,8 @@ export class AppWebComponent implements OnInit {
       alert('El numero ingresado debe ser menor o igual a 100');
     } else {
       this.RestApi.updateTask(`${num}`, act).subscribe();
-      location.href = '/home';
+      location.href = '/home#ab';
+      location.reload();
     }
   }
 

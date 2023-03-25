@@ -19,6 +19,10 @@ import { EditIconComponent } from './shared/edit-icon/edit-icon.component';
 import { EditIconInputComponent } from './shared/edit-icon-input/edit-icon-input.component';
 import { IconsEditCancelComponent } from './shared/icons-edit-cancel/icons-edit-cancel.component';
 import { IconsEditDoneComponent } from './shared/icons-edit-done/icons-edit-done.component';
+import { ExperienciasComponent } from './experiencias/experiencias.component';
+import { DeleteIconComponent } from './shared/delete-icon/delete-icon.component';
+import { AddIconComponent } from './shared/add-icon/add-icon.component';
+import { EditcardsComponent } from './editcards/editcards.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { IconsEditDoneComponent } from './shared/icons-edit-done/icons-edit-done
     EditIconInputComponent,
     IconsEditCancelComponent,
     IconsEditDoneComponent,
+    ExperienciasComponent,
+    DeleteIconComponent,
+    AddIconComponent,
+    EditcardsComponent,
   ],
   imports: [
     BrowserModule,

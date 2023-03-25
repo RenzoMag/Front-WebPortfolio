@@ -1,0 +1,118 @@
+<div class="cp" [ngClass]="{ cpe: !IsEditingCard }">
+  <section class="modall">
+    <div class="modal__cointainer">
+      <img
+        [src]="
+          data.ImageUrl == ''
+            ? 'https://www.cordobaturismo.gov.ar/wp-content/uploads/2019/10/cima-cerro-champaqui.jpg'
+            : data.ImageUrl
+        "
+      />
+      <div>
+        <h2>
+          <a href="{{ data.TitleUrl }}" target="_blank" rel="noopener">{{
+            data.Title == "" ? "Lorem ipsum dolor sit amet." : data.Title
+          }}</a>
+        </h2>
+        <p>
+          {{
+            data.Description == ""
+              ? "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptaodio architecto dolore praesentium, dicta vel unde sed, illum ut quis perferendis fugiat. Eius quidem necessitatibus accusamus ab dolore voluptatum accusantium autem ut recusandae molestiae, excepturi quibusdam expedita tempora esse et dicta molestias ea voluptatibus"
+              : data.Description
+          }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <form class="formm">
+    <div class="form-group row">
+      <label class="col-form-label">Url de la Imagen</label>
+      <div>
+        <input
+          [(ngModel)]="data.ImageUrl"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          placeholder="https://imagepng.com"
+          type="ur"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label">Url de la página</label>
+      <div>
+        <input
+          [(ngModel)]="data.TitleUrl"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          placeholder="https://www.google.com/"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label">Titulo</label>
+      <div>
+        <input
+          maxlength="25"
+          [(ngModel)]="data.Title"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          placeholder="Title"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label">Descripción</label>
+      <div>
+        <input
+          maxlength="250"
+          [(ngModel)]="data.Description"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          placeholder="Description"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <div>
+        <div class="form-check"></div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="btns">
+        <button type="submit" class="btn btn-danger" (click)="cancel()">
+          Cancelar
+        </button>
+        <button
+          *ngIf="!IsEditingCard"
+          [disabled]="
+            data.ImageUrl === '' ||
+            data.Title === '' ||
+            data.TitleUrl === '' ||
+            data.Description === ''
+          "
+          type="submit"
+          class="btn btn-success"
+          (click)="sendData()"
+        >
+          Añadir
+        </button>
+        <button
+          style="position: relative; right: 22px; color: white"
+          *ngIf="IsEditingCard"
+          [disabled]="
+            data.ImageUrl === '' ||
+            data.Title === '' ||
+            data.TitleUrl === '' ||
+            data.Description === ''
+          "
+          type="submit"
+          class="btn btn-info"
+          (click)="updateData()"
+        >
+          Actualizar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

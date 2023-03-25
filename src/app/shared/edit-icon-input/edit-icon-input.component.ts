@@ -21,11 +21,11 @@ export class EditIconInputComponent implements OnInit {
 
   send() {
     const act = {
-      id: 100,
+      id: 10,
       title: 'Descripcion personal',
       description: `${this.input}`,
     };
-    this.RestApi.updateTask('100', act).subscribe();
+    this.RestApi.updateTask('10', act).subscribe();
     this.ser.IsEditing.next(false);
     location.href = '/home';
   }
