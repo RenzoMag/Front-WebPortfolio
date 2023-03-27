@@ -12,6 +12,8 @@ import { IsEditingService } from 'src/services/is-editing.service';
 })
 export class EditcardsComponent {
   IsEditingCard = false;
+  Loading: boolean = false;
+
   data: any = {
     ImageUrl: '',
     TitleUrl: 'https://',
@@ -62,6 +64,7 @@ export class EditcardsComponent {
   }
 
   async sendData() {
+    this.Loading = true;
     const act = {
       id: `${this.data.Id + 1}`,
       title: `${this.data.Title}`,
@@ -70,11 +73,20 @@ export class EditcardsComponent {
       weburl: `${this.data.TitleUrl}`,
       view: true,
     };
-    this.RestApi.addExp(act).subscribe();
-    location.href = 'home#ex';
+    this.RestApi.addExp(act).subscribe({
+      next: (data) => {
+        this.Loading = false;
+        location.href = '/home#ex';
+      },
+      error: (error) => {
+        this.Loading = false;
+        location.href = '/home#ex';
+      },
+    });
   }
 
   updateData() {
+    this.Loading = true;
     const actt = {
       id: `${this.data.Id}`,
       title: `${this.data.Title}`,
@@ -83,8 +95,16 @@ export class EditcardsComponent {
       weburl: `${this.data.TitleUrl}`,
       view: true,
     };
-    this.RestApi.updateExp(this.CurrenId, actt).subscribe();
-    location.href = 'home#ex';
+    this.RestApi.updateExp(this.CurrenId, actt).subscribe({
+      next: (data) => {
+        this.Loading = false;
+        location.href = '/home#ex';
+      },
+      error: (error) => {
+        this.Loading = false;
+        location.href = '/home#ex';
+      },
+    });
   }
 
   cancel() {

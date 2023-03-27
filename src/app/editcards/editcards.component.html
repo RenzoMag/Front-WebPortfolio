@@ -1,5 +1,6 @@
 <div class="cp" [ngClass]="{ cpe: !IsEditingCard }">
-  <section class="modall">
+  <app-spinner *ngIf="Loading"></app-spinner>
+  <section class="modall" *ngIf="!Loading">
     <div class="modal__cointainer">
       <img
         [src]="
@@ -25,7 +26,7 @@
     </div>
   </section>
 
-  <form class="formm">
+  <form class="formm" *ngIf="!Loading">
     <div class="form-group row">
       <label class="col-form-label">Url de la Imagen</label>
       <div>

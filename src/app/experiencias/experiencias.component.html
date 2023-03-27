@@ -3,8 +3,8 @@
     Experiencias <br />
     <div class="barra"></div>
   </div>
-
-  <div class="contwork">
+  <app-spinner *ngIf="Loading"></app-spinner>
+  <div class="contwork" *ngIf="!Loading">
     <div *ngFor="let exp of experiencias">
       <div
         class="work"

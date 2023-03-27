@@ -19,6 +19,7 @@ export class ExperienciasComponent implements OnInit {
   experiencias: any = [];
   modalact: any = [];
   IsAdmin: boolean = false;
+  Loading: boolean = false;
 
   constructor(
     private RestApi: RestApi,
@@ -78,9 +79,18 @@ export class ExperienciasComponent implements OnInit {
       weburl: `${this.experiencias[id].weburl}`,
       view: false,
     };
-    this.RestApi.updateExp(id, actt).subscribe();
-    location.href = 'home#ex';
-    location.reload();
+    this.RestApi.updateExp(id, actt).subscribe({
+      next: (data) => {
+        this.Loading = false;
+        location.href = '/home#ex';
+        location.reload();
+      },
+      error: (error) => {
+        this.Loading = false;
+        location.href = '/home#ex';
+        location.reload();
+      },
+    });
   }
 
   editCard(id) {

@@ -8,36 +8,49 @@ export class RestApi {
   constructor(private http: HttpClient) {}
 
   getTask() {
-    return this.http.get('http://localhost:8080/tasks');
+    return this.http.get('https://webportfolio-aoih.onrender.com/tasks');
   }
 
   updateTask(id: any, body: any) {
-    return this.http.put(`http://localhost:8080/update/${id}`, body);
+    return this.http.put(
+      `https://webportfolio-aoih.onrender.com/update/${id}`,
+      body
+    );
   }
 
   addTask(body: any) {
-    return this.http.post('http://localhost:8080/save', body);
+    return this.http.post('https://webportfolio-aoih.onrender.com/save', body);
   }
 
   deleteTask(id: any) {
-    return this.http.delete(`http://localhost:8080/delete/${id}`);
+    return this.http.delete(
+      `https://webportfolio-aoih.onrender.com/delete/${id}`
+    );
   }
 
   /////////////////////////////////////////////////////////////////////////////
 
   getExp() {
-    return this.http.get('http://localhost:8080/exp');
+    return this.http.get('https://webportfolio-aoih.onrender.com/exp');
   }
 
   updateExp(id: any, body: any) {
-    return this.http.put(`http://localhost:8080/update/exp/${id}`, body);
+    return this.http.put(
+      `https://webportfolio-aoih.onrender.com/update/exp/${id}`,
+      body
+    );
   }
 
   addExp(body: any) {
-    return this.http.post('http://localhost:8080/save/exp', body);
+    return this.http.post(
+      'https://webportfolio-aoih.onrender.com/save/exp',
+      body
+    );
   }
 
   deleteExp(id: any) {
-    return this.http.delete(`http://localhost:8080/delete/exp/${id}`);
+    return this.http.delete(
+      `https://webportfolio-aoih.onrender.com/delete/exp/${id}`
+    );
   }
 }
