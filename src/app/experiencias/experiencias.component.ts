@@ -40,7 +40,6 @@ export class ExperienciasComponent implements OnInit {
 
     this.RestApi.getExp().subscribe((data: any) => {
       this.experiencias = data;
-      console.log(this.experiencias);
     });
   }
 
